@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 15.625" name="KingDB">
+  <DataContextMoniker Name="/KingDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="933a8da9-0524-4f45-bfc6-696d5400177c" absoluteBounds="0.75, 4, 2, 1.193992513020834">
+      <DataClassMoniker Name="/KingDBDataContext/Hall" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63274005-cddc-49eb-9200-f0bc0a979b04" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5535b24f-c58a-426f-bcba-4ca2deda6944" absoluteBounds="9, 4, 2, 1.193992513020834">
+      <DataClassMoniker Name="/KingDBDataContext/Transaction_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcd9a31b-f4d6-4206-bb53-714e902fe4bb" absoluteBounds="9.015, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a060224-539e-480f-acb8-0690f949fcee" absoluteBounds="3.5, 8.25, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/KingDBDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="226e8b45-2888-43bf-a9fd-131dea621262" absoluteBounds="3.515, 8.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2eb580ab-239d-4710-b496-45a195fffc37" absoluteBounds="0.75, 7.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/KingDBDataContext/Movie" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb63e074-c0fc-4b63-b463-9e6709090c7d" absoluteBounds="0.765, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b9d6c2c-488f-48d4-a378-d412310f3865" absoluteBounds="3.5, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/KingDBDataContext/Schedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c27a1a9e-9cc1-4871-a355-72b6338b637e" absoluteBounds="3.515, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dea115b3-51b5-4a9a-9b71-2de4c9544a81" absoluteBounds="3.5, 11.875, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/KingDBDataContext/Staff" />
+      <nestedChildShapes>
+        <elementListCompartment Id="363150bf-99b3-4411-8573-6d1c6b111729" absoluteBounds="3.515, 12.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba6ed003-5d69-4daa-a401-8b4dfe26b872" absoluteBounds="6.25, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/KingDBDataContext/Ticket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98f477af-0789-4c5f-aa06-64fd0f689203" absoluteBounds="6.265, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c3a5ed2-6eb4-44d9-8058-4c0d0ca848cc" absoluteBounds="9, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KingDBDataContext/Ticket_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc7ad655-88b1-4579-90c8-ab9f102a7168" absoluteBounds="9.015, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20d11ff2-d175-4897-9f11-d3cb94840425" absoluteBounds="6.25, 3.25, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/KingDBDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e052d6b1-b815-48f0-9dbb-e15350cf6ad6" absoluteBounds="6.265, 3.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.04166666666667 : 4.59699625651042 : JumpStart); (3.20833333333333 : 4.59699625651042 : JumpEnd); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Hall/Hall_Schedule" />
+      <nodes>
+        <classShapeMoniker Id="933a8da9-0524-4f45-bfc6-696d5400177c" />
+        <classShapeMoniker Id="1b9d6c2c-488f-48d4-a378-d412310f3865" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.5); (3.125 : 7.125); (3.125 : 4.01724612825521); (3.5 : 4.01724612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Movie/Movie_Schedule" />
+      <nodes>
+        <classShapeMoniker Id="2eb580ab-239d-4710-b496-45a195fffc37" />
+        <classShapeMoniker Id="1b9d6c2c-488f-48d4-a378-d412310f3865" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 6.75); (8.625 : 6.375); (8.625 : 1.53929768880208); (9 : 1.53929768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Ticket/Ticket_Ticket_Detail" />
+      <nodes>
+        <classShapeMoniker Id="ba6ed003-5d69-4daa-a401-8b4dfe26b872" />
+        <classShapeMoniker Id="7c3a5ed2-6eb4-44d9-8058-4c0d0ca848cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.59699625651042); (8.54166666666667 : 4.59699625651042 : JumpStart); (8.70833333333333 : 4.59699625651042 : JumpEnd); (9 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Transaction/Transaction_Transaction_Detail" />
+      <nodes>
+        <classShapeMoniker Id="20d11ff2-d175-4897-9f11-d3cb94840425" />
+        <classShapeMoniker Id="5535b24f-c58a-426f-bcba-4ca2deda6944" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 3.25); (7.25 : 1.96519903320312); (8.54166666666667 : 1.96519903320312 : JumpStart); (8.70833333333333 : 1.96519903320312 : JumpEnd); (9 : 1.96519903320312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Transaction/Transaction_Ticket_Detail" />
+      <nodes>
+        <classShapeMoniker Id="20d11ff2-d175-4897-9f11-d3cb94840425" />
+        <classShapeMoniker Id="7c3a5ed2-6eb4-44d9-8058-4c0d0ca848cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.25); (5.875 : 7.875); (5.875 : 4.52005126953125); (5.97916666666667 : 4.52005126953125 : JumpStart); (6.14583333333333 : 4.52005126953125 : JumpEnd); (6.25 : 4.52005126953125)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Member/Member_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="9a060224-539e-480f-acb8-0690f949fcee" />
+        <classShapeMoniker Id="20d11ff2-d175-4897-9f11-d3cb94840425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.15027547200521); (5.79166666666667 : 5.15027547200521 : JumpStart); (5.95833333333333 : 5.15027547200521 : JumpEnd); (5.97916666666667 : 5.15027547200521 : JumpStart); (6.14583333333333 : 5.15027547200521 : JumpEnd); (6.25 : 5.15027547200521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Schedule/Schedule_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="1b9d6c2c-488f-48d4-a378-d412310f3865" />
+        <classShapeMoniker Id="20d11ff2-d175-4897-9f11-d3cb94840425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.9365374615385); (6.0625 : 11.3740374615385); (6.0625 : 3.85377363476562); (6.25 : 3.85377363476562)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KingDBDataContext/Staff/Staff_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="dea115b3-51b5-4a9a-9b71-2de4c9544a81" />
+        <classShapeMoniker Id="20d11ff2-d175-4897-9f11-d3cb94840425" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

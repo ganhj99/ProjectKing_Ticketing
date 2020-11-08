@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KingDB" Class="KingDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\KingDB.mdf;Integrated Security=True" SettingsObjectName="ProjectKing_Ticketing.My.MySettings" SettingsPropertyName="DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Hall" Member="Halls">
+    <Type Name="Hall">
+      <Column Name="Hall_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Hall_Type" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Hall_Schedule" Member="Schedules" ThisKey="Hall_Id" OtherKey="Hall_Id" Type="Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transaction_Detail" Member="Transaction_Details">
+    <Type Name="Transaction_Detail">
+      <Column Name="Transaction_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Seat_No" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="Transaction_Id" OtherKey="Transaction_Id" Type="Transaction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="Member_Id" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Member_Photo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_PIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Member_ICNO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_MobileNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Member_BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Member_JoinedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Member_RewardPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Member_RewardPointExp" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Member_Transaction" Member="Transactions" ThisKey="Member_Id" OtherKey="Member_Id" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movie" Member="Movies">
+    <Type Name="Movie">
+      <Column Name="Movie_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Movie_Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Movie_Desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Movie_Rating" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Movie_Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Movie_Image" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Movie_Schedule" Member="Schedules" ThisKey="Movie_Id" OtherKey="Movie_Id" Type="Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedule" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="Schedule_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Start_Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="End_Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Schedule_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Schedule_Status" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Movie_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hall_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Schedule_Transaction" Member="Transactions" ThisKey="Schedule_Id" OtherKey="Schedule_Id" Type="Transaction" />
+      <Association Name="Hall_Schedule" Member="Hall" ThisKey="Hall_Id" OtherKey="Hall_Id" Type="Hall" IsForeignKey="true" />
+      <Association Name="Movie_Schedule" Member="Movie" ThisKey="Movie_Id" OtherKey="Movie_Id" Type="Movie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="Staff_Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_IC" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Phone" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Email" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Staff_Gender" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Role" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_DoB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Picture" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Staff_ResetPass" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Staff_Transaction" Member="Transactions" ThisKey="Staff_Id" OtherKey="Staff_Id" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Ticket_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ticket_Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Ticket_Detail" Member="Ticket_Details" ThisKey="Ticket_Id" OtherKey="Ticket_Id" Type="Ticket_Detail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket_Detail" Member="Ticket_Details">
+    <Type Name="Ticket_Detail">
+      <Column Name="Ticket_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transaction_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ticket_Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_Ticket_Detail" Member="Ticket" ThisKey="Ticket_Id" OtherKey="Ticket_Id" Type="Ticket" IsForeignKey="true" />
+      <Association Name="Transaction_Ticket_Detail" Member="Transaction" ThisKey="Transaction_Id" OtherKey="Transaction_Id" Type="Transaction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Transaction]" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="Transaction_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Schedule_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_Id" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="Transaction_Status" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount_Payable" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Points_Earned" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Method" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Transaction_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Transaction_Transaction_Detail" Member="Transaction_Details" ThisKey="Transaction_Id" OtherKey="Transaction_Id" Type="Transaction_Detail" />
+      <Association Name="Transaction_Ticket_Detail" Member="Ticket_Details" ThisKey="Transaction_Id" OtherKey="Transaction_Id" Type="Ticket_Detail" />
+      <Association Name="Member_Transaction" Member="Member" ThisKey="Member_Id" OtherKey="Member_Id" Type="Member" IsForeignKey="true" />
+      <Association Name="Schedule_Transaction" Member="Schedule" ThisKey="Schedule_Id" OtherKey="Schedule_Id" Type="Schedule" IsForeignKey="true" />
+      <Association Name="Staff_Transaction" Member="Staff" ThisKey="Staff_Id" OtherKey="Staff_Id" Type="Staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
